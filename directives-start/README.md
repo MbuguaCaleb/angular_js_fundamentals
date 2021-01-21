@@ -24,6 +24,7 @@ The class must have already been defined in yoyr css file.
 
 [ngClass]="{odd:onlyOdd}"
 
+2.[Ngstyle]->i know
 
 ```
 
