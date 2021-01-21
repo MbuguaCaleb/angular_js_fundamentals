@@ -1,10 +1,19 @@
-import { Directive, ElementRef, HostBinding, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appBetterHighlight]'
 })
 
 export class BetterHighlightDirective implements OnInit {
+
+  /*we may bind to our custom attribute directives from outside just as we do with components 
+   thus making them receive dynamic properties from outside which is much better.
+   
+   The custom directive therefore becomes very much like a component.
+  */
+
+  @Input() defaultColor:string='transparent';
+  @Input('appBetterHighlight') highlightColor:string='blue';
 
   /*used in cases where i wish to change the style of my element 
     and i do not want to use the render.
@@ -16,8 +25,7 @@ export class BetterHighlightDirective implements OnInit {
     Initial value of style has been set to transparent
 
   */
-  @HostBinding('style.backgroundColor') backgroundColor:string ='transparent';
-
+  @HostBinding('style.backgroundColor') backgroundColor:string;
 
   constructor( private elRef:ElementRef, private renderer:Renderer2) {
 
@@ -28,19 +36,20 @@ export class BetterHighlightDirective implements OnInit {
   //contructor is best for highlightng the properties of the class.
 
   ngOnInit() {
-  //this.renderer.setStyle(this.elRef.nativeElement,'background-color','blue');    
+    this.backgroundColor=this.defaultColor;
+    //this.renderer.setStyle(this.elRef.nativeElement,'background-color','blue');    
   }
 
   //convenient way of listening to events on the custom directive
   //Takes in the type of event it is listening to as an argument
   @HostListener('mouseenter') mouseover(eventData:Event){
     //this.renderer.setStyle(this.elRef.nativeElement,'background-color','blue');
-    this.backgroundColor='blue';
+    this.backgroundColor=this.highlightColor;
   }
 
   @HostListener('mouseleave') mouseleave(eventData:Event){
     //this.renderer.setStyle(this.elRef.nativeElement,'background-color','transparent');
-    this.backgroundColor='transparent';  
+    this.backgroundColor=this.defaultColor;  
   }
 
 }
