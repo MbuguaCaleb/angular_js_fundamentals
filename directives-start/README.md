@@ -28,6 +28,15 @@ The class must have already been defined in yoyr css file.
 
 ```
 
+**Custom Directives**
+
+```
+1.It is best practice to use the renderer since there are instances that angular does not allow you
+to access the DOM directly.
+
+
+```
+
 **Notes By**
 
 ```

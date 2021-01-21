@@ -14,7 +14,7 @@ export class BasicHiglightDirective implements OnInit
         //private assign elementref as a propery with the value the
         //element ref being received.
     }
-
+    
     ngOnInit(){
         this.elementRef.nativeElement.style.backgroundColor='green';
     }
