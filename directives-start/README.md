@@ -50,11 +50,18 @@ BUT Note that this is only a unique case.
 <p [appBetterHighlight]="'violet'" [defaultColor]="'red'">Style me with better directive</p>
 
 
-If we pass down a string to a string to an attribute/property directive we may take a shortcut as shown
+If we pass down a string to a string @inpute() we may take a shortcut as shown
 below..
 
 <p [appBetterHighlight]="'violet'" defaultColor="red">Style me with better directive</p>
 
+
+```
+
+**Main Topics**
+
+```
+Remeber the Rendered and the HostBinder HostListener.
 
 ```
 

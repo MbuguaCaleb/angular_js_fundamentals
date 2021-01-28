@@ -37,7 +37,7 @@ export class BetterHighlightDirective implements OnInit {
 
   ngOnInit() {
     this.backgroundColor=this.defaultColor;
-    //this.renderer.setStyle(this.elRef.nativeElement,'background-color','blue');    
+    //this.renderer.setStyle(this.elRef.nativeElement,'background-color','blue')`;    
   }
 
   //convenient way of listening to events on the custom directive
@@ -52,4 +52,5 @@ export class BetterHighlightDirective implements OnInit {
     this.backgroundColor=this.defaultColor;  
   }
 
+ 
 }
