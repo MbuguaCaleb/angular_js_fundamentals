@@ -31,6 +31,13 @@ The class must have already been defined in yoyr css file.
 **Custom Directives**
 
 ```
+
+generating a custom directive
+
+ng g d directivename.
+
+i should delete the spec file.
+
 1.It is best practice to use the renderer since there are instances that angular does not allow you
 to access the DOM directly.
 
