@@ -51,12 +51,20 @@
     
       <p [appBetterHighlight]="'violet'" defaultColor="red">Style me with better directive</p>
 
+      <div [ngSwitch]="value">
+        <div *ngSwitchCase="5">{{value}}</div>
+        <div *ngSwitchCase="10">{{value}}</div>
+        <div *ngSwitchDefault>output2</div>
+      </div>
+
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
       </ng-template>
+      
       <ng-template [ngIf]="!onlyOdd">
         <p >Only even</p>
       </ng-template>
     </div>
+
   </div>
 </div>

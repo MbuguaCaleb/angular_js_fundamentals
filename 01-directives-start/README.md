@@ -64,7 +64,18 @@ below..
 
 
 ```
+```
+(a)NgSwitch  is another great ditrtive that can be used to avoid mutiple if statements.
 
+  <div [ngSwitch]="value">
+        <div *ngSwitchCase="5">{{value}}</div>
+        <div *ngSwitchCase="10">{{value}}</div>
+        <div *ngSwitchDefault>output2</div>
+  </div>
+
+(b)Rember about <ng-template> as well and how its rendered conditionally
+
+```
 **Main Topics**
 
 ```
