@@ -33,12 +33,14 @@ that i injected my sevice but not upwards.
 The same instance of the service is available for the component and all its child
 components.
 
+The highest level we may add providers is the appmodule.ts then followed by the app.component.ts
+
+
 N/B
 We should not oveeride a service that was injected from parent to child another time by
 calling it again its the childs provider.
 
 This makes angular get confused since a service is automatically provided to all its children.
-
 
 Bringing a service into a component is now what i call injection.(My understanding)
 
@@ -47,4 +49,22 @@ Services may:
  (a)Provide data across your components as well.
 
  (b)Help you have dry code.
+
+```
+
+**Injecting services into serivices**
+
+```
+We use the @Injectable Key word to the receiving service.
+
+This is what allows the service to be injected to
+
+Side Note
+
+@Injectable ->is a metadata
+@compoent ->is a metadata
+@directive->is a metadata
+
+Where we dont inject anything into a service we dont have to add @Injectable()
+but its a good habit...especially in modern versions of angular
 ```

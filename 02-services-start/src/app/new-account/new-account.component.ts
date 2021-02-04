@@ -6,13 +6,12 @@ import {AccountsService} from '../accounts.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'], 
-  providers:[LoggingService]
+  // providers:[LoggingService]
 })
 
 export class NewAccountComponent {
 
   /*shorthands which helps me not keep instantiating this.loggingService*/
-
   constructor(private loggingService:LoggingService,
               private accountsService:AccountsService){}
   
@@ -20,7 +19,7 @@ export class NewAccountComponent {
 
   this.accountsService.addAccount(accountName, accountStatus);
 
-  this.loggingService.logStatusChange(accountStatus);
+  // this.loggingService.logStatusChange(accountStatus);
     
   }
 }
