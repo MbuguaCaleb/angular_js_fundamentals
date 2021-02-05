@@ -67,4 +67,17 @@ Side Note
 
 Where we dont inject anything into a service we dont have to add @Injectable()
 but its a good habit...especially in modern versions of angular
+
+```
+
+**Services for component communication**
+
+```
+I can also call an event emmitter from a service.
+
+And when i call an event emitter from a service i can be able to
+listen it across all of my components which is easier than at output.
+
+Its helps me avoid a lot of nested Output especially if a component is very far away.
+
 ```

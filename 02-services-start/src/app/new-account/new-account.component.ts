@@ -13,8 +13,15 @@ export class NewAccountComponent {
 
   /*shorthands which helps me not keep instantiating this.loggingService*/
   constructor(private loggingService:LoggingService,
-              private accountsService:AccountsService){}
-  
+              private accountsService:AccountsService){
+                /*listening to a service*/
+                this.accountsService.statusUpdated.subscribe(
+
+                (status:string)=>alert('New Status' +  status)
+                
+                  );
+              }
+
   onCreateAccount(accountName: string, accountStatus: string) {
 
   this.accountsService.addAccount(accountName, accountStatus);
