@@ -5,12 +5,12 @@ export class CounterService{
 
     incrementActiveToInactive(){
     this.activeToInactiveCounter++;
-   // console.log("Active To Inactive" + this.activeToInactiveCounter);
+    console.log(`Active To Inactive: ${this.activeToInactiveCounter}`);
     }
 
     incrementInactiveToActive(){
         this.inactiveToActiveCounter++;
-        //console.log("Inactive to Active"+ this.inactiveToActiveCounter);
+        console.log(`Inactive to Active: ${this.inactiveToActiveCounter}`);
     }
 
 }

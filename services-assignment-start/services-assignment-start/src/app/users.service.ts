@@ -2,7 +2,7 @@ import { Injectable} from "@angular/core";
 import { CounterService } from "./counter.service";
 
 /*Means it can take in another service*/
-Injectable()
+@Injectable()
 export class UsersService {
 
     activeUsers = ['Max', 'Anna'];
