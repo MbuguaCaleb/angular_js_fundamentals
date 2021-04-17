@@ -41,4 +41,9 @@
   <a routerLink="../servers">
   this means go back two steps below the load path
 
+(e)To avoid nesting of routes when using the router i must use the exact key word in the
+the router link active options
+
+  <li role="presentation"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
+
 ```
