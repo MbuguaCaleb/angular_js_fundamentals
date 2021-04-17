@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  //Injecting the router so as to allow redirection
+  constructor(private router:Router){}
 
   ngOnInit() {
   }
 
+  onLoadServers(){
+    //redirecting to a route
+    this.router.navigate(['/servers']);
+
+  }
 }

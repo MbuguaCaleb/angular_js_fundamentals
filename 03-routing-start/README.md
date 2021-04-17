@@ -46,4 +46,24 @@ the router link active options
 
   <li role="presentation"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li>
 
+(f)Redirection via typescript
+
+
+ We use the naviage method.
+ Naivagate works correctly even with relative paths.
+
+ this.router.navigate(['servers']);
+
+ The above will work correcty despite which component you are on.
+
+ Router link would result to an error incase you match paths wrongly..
+ Router link can detect on which url you are currently on
+ 
+ (g)Redirecting Dynamically
+
+  {path: 'users/:id', component: UserComponent},
+
+  N/B Colon is very important
+
+  
 ```
