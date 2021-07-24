@@ -115,4 +115,17 @@ ng generate service services/task
 
 They help me in dealing with asynhronous data
 
+import { Observable, of } from 'rxjs';
+
+of is used when i am returning an Observable incase the module
+i am using does not have this inbuld
+
+
+A module like Http Client has this in built
+
+(e)Angular HTTP Client
+
+It returns an Observable automatically
+
+
 ```
