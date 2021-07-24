@@ -1,27 +1,118 @@
-# AngularCrashOne
+##Task Tracker Application in Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+```
+Angular JS-Was the Initial Release of Angular
 
-## Development server
+But angular 2-11(Angular was completely rewitten)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Advantages
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+(a)Create dynamic front end apps and UIs
 
-## Build
+(b)Full featured framework(router,http etc)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+(c)Integrated Typescript(Though this is optional,
+it is a huge advantage when it comes to angular)
 
-## Running unit tests
+(d)Rx Js-Efficient,Asynchronous programming.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+(e)Angular is test friendly.
 
-## Running end-to-end tests
+(f)Popular in enterprise businesses..Used for much larger
+applications since it is more standardized.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
 
-## Further help
+**Angular Components**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+Made up of the
+
+(a)template-HTML File
+
+(b)Logic-Typescript file
+
+(c)Styling
+
+components are reusable and can be embedded as an XML-like tag
+
+
+```
+
+**Angular Services**
+
+```
+(a)Angular distinguishes components from services to increase
+modularity and reusablitity...
+
+It makes a component very clean.
+
+A component can delegate certain tasks to services such as fetching
+data from the server,validating user input or logging directly to the
+console.
+
+
+
+```
+
+**Angular CLI**
+
+```
+Standard tooling for Angular Development
+
+It is a commandline interface for creating angular apps
+
+From it we get to commands to  generate components,services,etc.
+
+```
+
+**Short NOTES**
+
+```
+(a)Any component in angular JS Must be in the declarations in the
+app.module.ts
+
+When i use cli..its automaticaly imported
+
+(b)I can apply javascript methods within my interpolations
+
+<h1>{{ title.toUpperCase() }}</h1>
+{{ 1 + 5 }}
+
+(c)an autogeneared angular component contains 4 files(Testfile, app.component.ts,app.component.html
+and app.component.ts)
+
+(d)A component is always prefixed by <app-component-name> when declaring it in another template
+   All the components i have must be declared in the app module ts
+
+   It is like  where i bring them into the main app
+
+
+```
+
+**SECRETS**
+
+```
+(a)Shortcut to generate components
+
+ng generate component components/task-item
+
+(b)Angular font awesome
+
+ng add @fortawesome/angular-fontawesome
+https://github.com/FortAwesome/angular-fontawesome
+
+Now this external module will be added to app.modules..imports
+
+(c)Services
+
+They are like a centatilised state
+ng generate service services/task
+
+
+(d)Observables
+
+They help me in dealing with asynhronous data
+
+```
