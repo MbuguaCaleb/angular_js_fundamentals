@@ -97,6 +97,9 @@ and app.component.ts)
 (a)Shortcut to generate components
 
 ng generate component components/task-item
+ng generate component components/add-task
+
+npm install -g @angular/cli
 
 (b)Angular font awesome
 
@@ -108,8 +111,6 @@ Now this external module will be added to app.modules..imports
 (c)Services
 
 They are like a centatilised state
-ng generate service services/task
-
 
 (d)Observables
 
@@ -127,5 +128,10 @@ A module like Http Client has this in built
 
 It returns an Observable automatically
 
+(f)Two way Data Binding
+
+Two-way data binding refers to sharing data between a component class and its template. If you change data in one place, it will automatically reflate at the other end. For example, if you change the value of the input box, then it will also update the value of the attached property in a component class.
+
+Its a comnibation of attribute and event binding
 
 ```
