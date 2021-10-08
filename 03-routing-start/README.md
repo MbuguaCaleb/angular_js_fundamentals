@@ -1,27 +1,44 @@
-# MyFirstApp
+**Routing**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+```
+I load  different components differently like i would
+do a new page via routing
 
-## Development server
+In Angular JS angular routing is special because i do not mount a new
+page but instead dload a different component
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
 
-## Code scaffolding
+**Including Routes**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+(a)I import the routes from the angularouter
 
-## Build
+    import { Routes } from "@angular/router";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+(b)I create an array with the type of routes where i store my
+   Routes
 
-## Running unit tests
+   const appRoutes: Routes = [
+  { path: "users", component: UsersComponent }, //localhost:4200/users
+   ];
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+(c)My array of routes has a very specific structure,
 
-## Running end-to-end tests
+(i)path----N/B do not put a slash on the given path
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+(ii)component
 
-## Further help
+(d)I then must register my appRoutes array under imports so that they are
+   recognized within my application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+
+(e)on app.component html encaplulate everything under the <router-outlet></router-outlet>
+   which will take charge if rendering the components.
+
+it marks the place where you want the router to load the component of the currently selected
+route.
+
+
+```
