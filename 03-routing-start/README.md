@@ -148,3 +148,26 @@ this.router.navigate(["servers"], { relativeTo: this.route });
 
 
 ```
+
+**Routes with Parameters**
+
+```
+(a)A colon must be included between the route and the parameter,
+   this is what makes the route dynamic
+
+ { path: "users/:id", component: UserComponent },
+
+(b)How do we retrieve data from the URL??
+
+  We inject an ActivatedRoute object.
+
+  The ActivatedRoute object will give us access to the ID passed
+  in the URL.
+
+  ActivatedRoute is an object that has so many properties which we can
+  tap into.
+
+  How we retrieve the id
+  id: this.route.snapshot.params["id"],
+
+```
