@@ -34,11 +34,117 @@ page but instead dload a different component
 
 imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
 
-(e)on app.component html encaplulate everything under the <router-outlet></router-outlet>
-   which will take charge if rendering the components.
+(e)on app.component html encaplulate everything under the
+
+<router-outlet></router-outlet>
+which will take charge if rendering the components.
 
 it marks the place where you want the router to load the component of the currently selected
 route.
+
+The router outlet is a directive but it has a tag.
+
+
+```
+
+**Navigating with router links**
+
+```
+You should not implement naviation by adding links directly
+as in purehtml,
+
+This triggers a reload with is the default behaviour
+
+**Wrong Way**
+<li role="presentation"><a href="/servers">Servers</a></li>
+
+We use what we call a routerLink Directive,
+
+<li role="presentation" class="active"><a routerLink="/">Home</a></li>
+<li role="presentation"><a routerLink="/servers">Servers</a></li>
+<li role="presentation"><a [routerLink]="['/users']" >Users</a></li>
+
+Method 3 is more recommended.
+
+It gives us more control and constuct more complex paths more easily.
+
+routerLink listens to a click, prevents the default  which is to reload
+the page then loads the selected component,
+
+
+```
+
+**Relative Vs Absolute Paths**
+
+```
+(a)Relative path
+
+<li role="presentation"><a routerLink="servers">Servers</a></li>
+
+It checks the current URL you are on then appends the path.
+
+(b)Absolute path
+
+It will go to the appended URL regardless of where you are on the
+component tree
+<li role="presentation"><a routerLink="/servers">Servers</a></li>
+
+
+```
+
+**Styling Active Paths**
+
+```
+
+I use the routerLinkActive="classname"
+
+It takes a classname i want to appear when the route is active,
+
+The empty path segment is always part of all the paths(FrontEnd Frameworks)
+
+
+//Angular JS Secret
+
+Whenever i am passing something that is more than a string in angular Js,
+i must use property binding .
+
+Example
+
+[routerLinkActiveOptions]="{exact:true}"
+ [routerLink]="['users']"
+If its just a string or will result to a string i can pass it as an attribute
+
+Example
+routerLinkActive="active"
+
+
+```
+
+**Naviagating to routes progmatically via your typescript**
+
+```
+A good example of this is after a http Post request
+and i want to redirect to a route,
+
+i inject the router module from angular router into
+my contructor  the use one of its methods,
+
+constructor(private router: Router) {}
+
+  onLoadServers() {
+    //http request
+    this.router.navigate(["/servers"]);
+  }
+
+We can also use relative paths programatically
+
+N/B
+unlike the router link the naviage method does not know which route you are currently on
+
+By default navigate directs to the root domain not unless i add the relative To propery
+
+as shown below
+this.router.navigate(["servers"], { relativeTo: this.route });
 
 
 ```
