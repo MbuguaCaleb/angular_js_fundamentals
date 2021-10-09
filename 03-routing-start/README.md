@@ -194,3 +194,61 @@ rerender the component.
 
 
 ```
+
+**Handling Observables**
+
+```
+Once an Observable is executed/subscribed to , it is usually held in memory
+
+A component on the other hand is destroyed when you move from component A to
+component B.
+
+It is therefore important to clear the value of the Observable from memory
+once you switch away from the component
+
+We use the ngOnDestroy life cycle hook to unsubsribe from an observable.
+
+To unsubsribe from an Observable we need to import subscription from rxjs
+
+import { Subscription } from "rxjs";
+
+N.B
+
+For Observables that come inbuilt with angular Js i do not have to unsubssribe
+But for custom Observables, i must Unsubsribe
+
+```
+
+**Passing Query Parameters and Fragments**
+
+```
+http://localhost:4200/users/1/caleb?mode=editing#loading
+
+Query Parameters are like when i am passing data via a GET request to a route
+
+(a)addding from router link
+  <a
+  [routerLink]="['/servers',5,'edit']"
+  [queryParams]="{allowEdit:'1'}"
+  fragment="loading"
+  class="list-group-item"
+*ngFor="let server of servers">
+{{ server.name }}
+  </a>
+
+  i may  add more than one fragment by applying property binding
+
+ (b)
+
+  this.router.navigate(["/servers", id, "edit"], {
+    queryParams: { allowEdit: "1" },
+    fragment: "loading",
+  });
+
+
+Retreving Parameters
+
+private route: ActivatedRoute) is very important
+
+
+```
