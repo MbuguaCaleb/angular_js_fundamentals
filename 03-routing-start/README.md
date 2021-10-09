@@ -171,3 +171,26 @@ this.router.navigate(["servers"], { relativeTo: this.route });
   id: this.route.snapshot.params["id"],
 
 ```
+
+**Loading Route Parameters Reactively**
+
+```
+We use an obdervable that listens to the change of the params.
+An Observable helps me in handling of asynchronous data
+
+this.route.params.subscribe((params: Params) => {
+  this.user.id = params["id"];
+  this.user.name = params["name"];
+});
+
+
+This observable will update our component whenever the parameters change
+
+When i am loading my component from outside i do not need to subscribe, snapshot
+is enought
+
+However if i am loading from inside i must subscribe because angular will not
+rerender the component.
+
+
+```
