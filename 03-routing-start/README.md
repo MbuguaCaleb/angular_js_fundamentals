@@ -250,5 +250,23 @@ Retreving Parameters
 
 private route: ActivatedRoute) is very important
 
+```
+
+**Router Outlet Directive**
+
+```
+Everytime i want to load a child route inside
+its parent i use </router-outlet>
+
+```
+
+**Query Params Handling**
+
+```
+So as not to lose my query parameters as i havigate
+from one component to the other,  i use
+(a)queryparamsHandling:'preserve'
+
+(b)(a)queryparamsHandling:'merge'
 
 ```
