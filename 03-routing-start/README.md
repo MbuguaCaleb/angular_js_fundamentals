@@ -289,4 +289,23 @@ A guard is like a middeleware in Angular Js.
 
 They are used to protect some routes for instance.
 
+We use the canActivate Interface.
+
+CanActivate controls access to a route.
+
+A guard is created just like a service
+
+Can Activate returns either an Observable, a promise or a Boolean
+
+To protect child routes, we use the CanActivateChild Interface.
+
+CanActivateChild
+
+With can activate child the Auth Guard can protect both parent
+and Child routes.
+
+
+CanDeactivate controls whether you can leave a route or not
+
+
 ```

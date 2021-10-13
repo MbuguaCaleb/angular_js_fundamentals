@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { AppRoutingModule } from "./app-routing.module";
 import { AuthService } from "./auth.service";
 import { AuthGuard } from "./auth-guard-service";
+import { CanDeactivateGuard } from "./servers/edit-server/can-deactivate-guard.service";
 
 //an array of routes which i have called appRoutes
 //I then must register the appRoutes at the imports so that they are
@@ -33,7 +34,7 @@ import { AuthGuard } from "./auth-guard-service";
     PageNotFoundComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [ServersService, AuthService, AuthGuard],
+  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

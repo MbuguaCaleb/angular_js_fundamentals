@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  CanActivateChild,
   Router,
   RouterStateSnapshot,
 } from "@angular/router";
@@ -9,9 +10,8 @@ import { Observable } from "rxjs";
 import { AuthService } from "./auth.service";
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(private authService: AuthService, private router: Router) {}
-
   //this is just a guard where i will check from my service whether i am activated or not
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -25,6 +25,14 @@ export class AuthGuard implements CanActivate {
         this.router.navigate(["/"]);
       }
     });
+  }
+
+  canActivateChild(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    //instead of repeating my code i  just return can activate instead
+    return this.canActivate(route, state);
   }
 }
 
