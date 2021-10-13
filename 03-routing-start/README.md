@@ -281,3 +281,12 @@ appear as the bottom most route.
 { path: "**", redirectTo: "/not-found" },
 
 ```
+
+**Guards**
+
+```
+A guard is like a middeleware in Angular Js.
+
+They are used to protect some routes for instance.
+
+```
