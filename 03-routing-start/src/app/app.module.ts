@@ -2,7 +2,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { Routes, RouterModule } from "@angular/router";
 
 /**My Components and servicees */
 import { AppComponent } from "./app.component";
@@ -13,26 +12,13 @@ import { UserComponent } from "./users/user/user.component";
 import { EditServerComponent } from "./servers/edit-server/edit-server.component";
 import { ServerComponent } from "./servers/server/server.component";
 import { ServersService } from "./servers/servers.service";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { AppRoutingModule } from "./app-routing.module";
 
 //an array of routes which i have called appRoutes
 //I then must register the appRoutes at the imports so that they are
 //recoginized within my application
-const appRoutes: Routes = [
-  { path: "", component: HomeComponent },
-  {
-    path: "users",
-    component: UsersComponent,
-    children: [{ path: ":id/:name", component: UserComponent }],
-  },
-  {
-    path: "servers",
-    component: ServersComponent,
-    children: [
-      { path: ":id", component: ServerComponent },
-      { path: ":id/edit", component: EditServerComponent },
-    ],
-  },
-];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +28,9 @@ const appRoutes: Routes = [
     UserComponent,
     EditServerComponent,
     ServerComponent,
+    PageNotFoundComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ServersService],
   bootstrap: [AppComponent],
 })

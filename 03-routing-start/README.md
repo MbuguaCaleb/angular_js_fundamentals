@@ -270,3 +270,14 @@ from one component to the other,  i use
 (b)(a)queryparamsHandling:'merge'
 
 ```
+
+**Redirection**
+
+```
+When i use wildcard redirect it must
+appear as the bottom most route.
+
+{ path: "not-found", component: PageNotFoundComponent },
+{ path: "**", redirectTo: "/not-found" },
+
+```
