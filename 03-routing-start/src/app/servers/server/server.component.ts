@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { ActivatedRoute, Params, Router, Data } from "@angular/router";
 
 import { ServersService } from "../servers.service";
 
@@ -18,8 +18,12 @@ export class ServerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.route.data.subscribe((data: Data) => {
+      this.server = data["server"];
+    });
     //+ is like parseInt in javascript
     //this one is gotten when the component is loading
+    /**Getting data from my Params 
     const id = +this.route.snapshot.params["id"];
     this.server = this.serversService.getServer(id);
 
@@ -28,6 +32,7 @@ export class ServerComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.server = this.serversService.getServer(+params["id"]);
     });
+    */
   }
 
   onEdit(id: number) {
@@ -36,4 +41,7 @@ export class ServerComponent implements OnInit {
       queryParamsHandling: "preserve",
     });
   }
+}
+function Data(data: any, Data: any) {
+  throw new Error("Function not implemented.");
 }

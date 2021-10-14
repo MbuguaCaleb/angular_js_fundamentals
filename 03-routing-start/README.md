@@ -309,3 +309,41 @@ CanDeactivate controls whether you can leave a route or not
 
 
 ```
+
+**Passing Static Data to Routes**
+
+```
+  {
+    path: "not-found",
+    component: ErrorPageComponent,
+    data: { message: "Page not Found" },
+  },
+
+  You may pass a data attribute to a route path
+  as a key value pair
+
+
+```
+
+**Fetching Data Dynamically**
+
+```
+We use the resolve guard, which loads before a component is loaded.
+
+Resolve is just like CanActivate or CanDeactivate but its work is to load data.
+
+Before the component loads, when i add the resolver in my route ,the data first will
+load
+
+It comes in hany for asynchorous task such as HTTP Requests.
+
+Once data is returned to the route by the resover we fetch it to our component
+by the Key value
+
+ {
+  path: ":id",
+  component: ServerComponent,
+  resolve: { server: ServerResolver },
+},
+
+```
