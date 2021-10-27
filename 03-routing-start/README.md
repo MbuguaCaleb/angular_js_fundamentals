@@ -351,12 +351,14 @@ by the Key value
 **Location Stategies**
 
 ```
-Also known as Hashed Mode routing is important in rendering 
+Also known as Hashed Mode routing is important in rendering
 my routes at the server
 
 //imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
 
 Incase of Old browsers and during deployment where the server cannot
 separate the domain from the routes, you use useHash
+
+
 
 ```
