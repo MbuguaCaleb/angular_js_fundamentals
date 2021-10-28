@@ -94,6 +94,36 @@ i cab call three methods
 
 (b)observer.error()
 
+When ever an Observaable emits an error, It dies(It does not emit any other value)
+
+Its just like catch in .then()
+
 (c)observer.complete()
+
+A good example of an Observable that completes is a Http Request
+
+Whenever an Observable is complete, It is done, There are no other values emmited thereafter.
+
+You do not need to unsubsribe to an Observable Once its complete..But its good practice just incase
+
+When an error happens,It cancels the Observable and therefore the Observable does not Complete.
+
+```
+
+**Operators**
+
+```
+They are used to maiplutate/transform you data just before it reaches the Observer.
+
+(They convert your data Just before subscribing to it)
+
+We do this by calling the pipe method
+
+It is used when you are fetching complex data but you want to transform it before you use
+it.
+
+N/B
+
+It is important to note that the Pipe method can take more than One argument.
 
 ```
