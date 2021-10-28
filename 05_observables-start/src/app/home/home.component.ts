@@ -8,16 +8,17 @@ import { interval, Subscription, Observable } from "rxjs";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  //to Unsubsribe from a custom Observable we should store it in a Subscription
   private firstObservableSubscription: Subscription;
+
   constructor() {}
   ngOnInit() {
-    //every one thouand seconds a new event will be emmitted
-    //simuates and observable.
-    //interval has been imported from rxjs(It is similar to set Interval)
-    // this.firstObservableSubscription = interval(1000).subscribe((count) => {
-    //   console.log(count);
-    // });
-
+    /*Interval Fires a Number Every Second*/
+    /*
+    this.firstObservableSubscription = interval(1000).subscribe((count) => {
+      console.log(count);
+    });
+    */
     const customIntervalObservable = Observable.create((observer) => {
       let count = 0;
       setInterval(() => {
@@ -26,15 +27,15 @@ export class HomeComponent implements OnInit, OnDestroy {
       }, 1000);
     });
 
-    //subscribing to my custom Observable
-    customIntervalObservable.subscribe((data) => {
-      console.log(data);
-    });
+    this.firstObservableSubscription = customIntervalObservable.subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
   }
 
-  //Means whenever we leave that component we clear our subscription
-  //we threfore prevent memory leaks
-  ngOnDestroy(): void {
-    // this.firstObservableSubscription.unsubscribe();
+  //Unsubscribing from the Observable to Prevent Memory Leaks
+  ngOnDestroy() {
+    this.firstObservableSubscription.unsubscribe();
   }
 }
