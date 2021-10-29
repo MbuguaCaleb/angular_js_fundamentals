@@ -119,3 +119,77 @@ To get a Javascript Object by default i should pass #f="ngForm"
    </form>
 
 ```
+
+**Form State**
+
+```
+
+There are a lot of important attributes in the form State.
+
+These are very helpful and include the dirty, enabled,
+invalid, touched, untouched ,validator.
+
+They are very important properties just like in raw Javascript.
+
+```
+
+**View Child as an alternative**
+
+```
+Remember @ViewChild is a way of grabbing my local reference.
+
+I can grab my whole form via the @ViewChild
+
+@ViewChild("f") signUpForm: NgForm;
+
+```
+
+**Validation**
+
+```
+There are built in and much more powerful directives in Angular templates when using TDD Approach
+
+<input type="email" id="email" class="form-control" name="email" ngModel required email>
+
+Depending on whether an input is valid or not, My Valid propery in form state is affected.
+
+This happens both in the form level and in the controls level.
+
+If i inspect my inputs i can also be able to see whether the valid or isInvalid class has been
+applied.
+
+Angular tracks the state of the form and the validity
+
+We can therefore style the inputs conditionally
+
+It is very important to know that there are some classes added on my input
+such as ng-invalid depending on whether my input is valid
+or not .
+
+Example
+class="form-control ng-dirty ng-valid ng-touched"
+
+Remember the work of angular or any other tecnology such as docker is to help you.
+
+(They are not difficult!)
+
+
+When styling these css classes i must be explicit...
+
+
+remember if one of the form inputs is invalid, the form propery for valid
+will also be invalid.
+
+
+N/B
+Form state is very important
+
+Attaching ngModel directive to element ref #email...all the properties of that control will be tagged
+to the element ref...
+
+<input type="email" id="email" class="form-control" name="email" ngModel required email #email="ngModel">
+
+(We can therefore add validations much more dynamically for particular controls)
+
+
+```
