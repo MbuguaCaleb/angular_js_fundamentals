@@ -127,3 +127,20 @@ N/B
 It is important to note that the Pipe method can take more than One argument.
 
 ```
+
+**Subjects**
+
+```
+In place of event emitters we can use Subjects.
+
+These are hugely advantageous since they are more active and we can call them from Outside...
+
+From a normal Observable, we call next from within the Component...
+
+In a Subject however we can emit/call next from Outside...
+
+Using them in place of event emitters is also advantageous since we can be able to apply
+Operators and pipes.
+
+
+```
