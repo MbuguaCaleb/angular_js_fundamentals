@@ -9,7 +9,8 @@ import { NgForm } from "@angular/forms";
 export class AppComponent {
   //view child is used to grab my local references
   @ViewChild("f") signUpForm: NgForm;
-
+  defaultQuestion = "teacher";
+  answer = "";
   suggestUserName() {
     const suggestedName = "Superuser";
   }

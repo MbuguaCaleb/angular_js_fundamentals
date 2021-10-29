@@ -193,3 +193,59 @@ to the element ref...
 
 
 ```
+
+**Setting Default Values**
+
+```
+We use [ngModel] ="Value"
+
+(One way binding)
+```
+
+**Two way Binding**
+
+```
+Helps us  to instanly react to any
+changes
+
+It is a combination of event binding and attribute binding.
+
+(Meaning it cab both emit and receive data at the same time)
+
+<textarea name="questionAnswer" class="form-control" rows="3" [(ngModel)]="answer"></textarea>
+
+ngModel  can be used in 3 ways:
+
+(a)By itself(No biding)---Just to tell angular that it is a control.
+
+(b)Attribute biding/One way biding---To set a default value to a control.
+
+(c)Two way data binding.-->To instantly Output the value.
+
+It is very important in passing data between your inputs.
+
+```
+
+**Grouping Form Controls**
+
+```
+When i want to group data coming from my form so as to come up
+with a more complex JSON Object.
+
+i can wrap the form controls that i want to Group inside a
+div with a directive ngModelGroup.
+
+i can perform even separate validations within my Group
+as i am ablee to have access to all the properties.
+
+
+ <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+
+   <contols-inside>
+ </div>
+
+ Controls inside will be grouped together with UserData as the Key.
+
+This gives us even better and fine gained control over our forms.
+
+```
