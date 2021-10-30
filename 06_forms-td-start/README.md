@@ -249,3 +249,27 @@ as i am ablee to have access to all the properties.
 This gives us even better and fine gained control over our forms.
 
 ```
+
+**Set a Value to a Form Programtically**
+
+```
+Once we get the form programatically, we can be able to set the Value
+of inputs from the JSON Object WE Receive.
+
+Very Important directives when it comes to forms so far:
+
+(a)ngModel
+(b)ngForm
+(c)ngFormGroup
+(d)ngSubmit-->prevent a default submit
+
+When i want to access details about a certain control, all i need is to
+tag an elekemt ref to either of these directives.
+
+<input type="email" id="email" class="form-control" name="email" ngModel required email #email="ngModel">
+
+Formdetails
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+
+</form>
+```
