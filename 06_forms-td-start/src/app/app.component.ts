@@ -57,6 +57,10 @@ export class AppComponent {
     this.user.secretQuestions = this.signUpForm.value.secret;
     this.user.answer = this.signUpForm.value.questionAnswer;
     this.user.gender = this.signUpForm.value.gender;
+
+    //Restting the form
+    //important after submission to reset the form State in preparation for the Next Input
+    this.signUpForm.reset();
   }
 
   //   secret: this.defaultQuestion,
