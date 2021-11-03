@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
-
+import { Component } from "@angular/core";
+import { FormGroup } from "@angular/forms";
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  genders = ['male', 'female'];
+  genders = ["male", "female"];
+
+  //creating a proprty that will hold our Form
+  signUpForm: FormGroup;
+
+  
 }
