@@ -64,5 +64,42 @@ Whenever i am passing data into a Component i pass it via Porperty Binding.
 We use (ngSubmit) since we need to React to the Form Submit.
 
 The diffrence is that we do not get our value by our element reference
-but   by the form we created and have linked with our template
+but   by the form we created and have linked with our template.
+
+```
+
+**Validation**
+
+```
+It is done not from my template but from my typescript
+
+The second argument for form control is the validator.
+
+N/B
+
+ngOnInit() {
+    this.signUpForm = new FormGroup({
+      username: new FormControl(null, Validators.required),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      gender: new FormControl("male"),
+    });
+  }
+
+```
+
+**Outputting Validation Errors**
+
+```
+I Use NgIf
+
+We accesss the elements differently using the get access Method
+
+I grab the Form Passed via Property BindinG,the Use the get() method with control name passed
+<span *ngIf="!signUpForm.get('username').valid && signUpForm.get('username').touched" class="help-block">Please enter a valid Username!</span>
+
+Properties i validate against are still the same(valid and touched)
+
+Overall From Validation Still Holds,
+
+<span *ngIf="!signUpForm.valid && signUpForm.touched" class="help-block">Please enter Valid Data!</span>
 ```
