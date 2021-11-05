@@ -22,6 +22,17 @@ this.signUpForm = new FormGroup({
     gender: new FormControl("male"),
 });
 
+FormGroup and FormControl are Made availabe by the Reactive Package Module
+
+Form Control takes in a Number of Arguments.
+
+(a)Initial Value of Control
+
+(b)Single Validator or an Array of Validators we May want to Pass into this Control.
+
+(c)Any Potential Asynchronous Validators.
+
+
 ```
 
 **Linking Our Form Template to TS**
@@ -43,5 +54,15 @@ If i want to maintain Squared brackets we should wrap the string in Quotes
 
 <input type="text" id="email" class="form-control" [formControlName]="email">
 
+Whenever i am passing data into a Component i pass it via Porperty Binding.
 
+```
+
+**SUBMITTING FORM**
+
+```
+We use (ngSubmit) since we need to React to the Form Submit.
+
+The diffrence is that we do not get our value by our element reference
+but   by the form we created and have linked with our template
 ```
