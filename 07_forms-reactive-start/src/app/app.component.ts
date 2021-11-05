@@ -11,8 +11,10 @@ export class AppComponent implements OnInit {
   //creating a proprty that will hold our Form
   signUpForm: FormGroup;
 
+  //I Should initialize my form before rendering the Template
+  //So that when my template is rendered they are in sync with the Form
   ngOnInit() {
-    //control are Key Value pairs in the Object we pass to the Form Group
+   
     this.signUpForm = new FormGroup({
       username: new FormControl(null),
       email: new FormControl(null),

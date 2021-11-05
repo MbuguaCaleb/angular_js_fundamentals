@@ -8,18 +8,13 @@ Angular infres the form Object from the DOM.
 **Reactive**
 
 ```
-Form is Created programatically and Synchronized with the Dom.
-
-Using the programmattic approach i create my from from TypeScript
-Code
+Form is Created programatically (In Typecript Code)
 
 I model and create my form my self rather than angular infering on My Behalf
 
 SignUpForm is of the type FormGroup.
 
-controls are Key Value pairs in the Object we pass to the FormGroup
-
-They are also classes i.e the Controls.
+controls are passed as Key Value pairs
 
 this.signUpForm = new FormGroup({
     username: new FormControl(null),
